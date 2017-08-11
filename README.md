@@ -7,7 +7,7 @@ A Facebook clone for the Bootcamp Ruby class.
 
 ## Required features
 
-- [ ] User can sign up
+- [x] User can sign up
 - [ ] User can sign in
 - [ ] A visitor can view a list of users
 - [ ] User can update profile information (name, email, image)

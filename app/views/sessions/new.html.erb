@@ -1,17 +1,17 @@
 <h1>Login now! Banh peu!</h1>
 <div class="column is-4">
-  <%= form_for @user do |f| %>
+  <%= form_tag login_path do %>
   <div class="field">
     <label class="label">Email</label>
     <div class="control">
-      <%= f.text_field "email", class: "input", placeholder: "abc@gmail.com" %>
+      <%= text_field_tag :email, nil, placeholder: "abc@gmail.com", class: "input" %>
     </div>
   </div>
 
   <div class="field">
     <label class="label">Password</label>
     <div class="control">
-      <%= f.password_field "password", class: "input", placeholder: "********" %>
+      <%= password_field_tag :password, nil, placeholder: "*********", class: "input" %>
     </div>
   </div>
 
