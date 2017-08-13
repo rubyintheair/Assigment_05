@@ -1,1 +1,33 @@
-<h1>Welcome to Users_path! <br>Hien tai trang nay dang empty boi vi rails c broke rou!!!</h1>
+
+<div>
+  <%= User.all.each do |user| %>
+    <div class="card">
+      <header class="card-header">
+        <figure class="image is-96x96 card-header-img">
+          <img src="https://s-media-cache-ak0.pinimg.com/736x/b4/90/11/b490113b6652e539173ce73d49f90801--tabby-kittens-cat-illustrations.jpg" alt="Image">
+        </figure>
+        <p class="card-header-title">
+          <%= user.name %>
+        </p>
+        <% if current_user %>
+          <% if current_user.is_friend?(user) %>
+            <%= link_to "Remove friend", remove_friend_path(user_id: user.id) , method: :delete ,class: "button is-danger add-remove"%>
+          <% else %>
+            <%= form_for current_user.friendships.build(friend: user) do |f| %>
+              <%= f.hidden_field :friend_id, name: "Add Friend", class: "card-header-title" %>
+              <button class="button is-primary add-remove">Add Friend</button>
+            <% end %>
+          <% end %>
+        <% end %>
+      </header>
+      <div class="card-content">
+        <div class="content">
+          Hello, my name is <strong><%= user.name.capitalize%></strong>
+          <br>Connect with me through <%= user.email %>@gmail.com
+          <br>Learning programming is fun and easy, but writing a good program can prove to be a daunting task. In most cases, we find ourselves constantly scratching our heads trying to understand the spaghetti code we wrote, or making lots of changes just because of a newly added minor feature.
+        </div>
+      </div>
+    </div>
+  <% end %>
+</div>
+

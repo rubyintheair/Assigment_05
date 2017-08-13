@@ -8,7 +8,7 @@ class SessionsController < ApplicationController
       if @user.authenticate(params[:password])
         session[:user_id] = @user.id
         flash[:success] = "Welcome back, banh beo #{@user.name}!"
-        redirect_to users_path
+        redirect_to show_path
       else
         flash[:error] = "#{error.full_message.to_sentence}"
         render "index"
