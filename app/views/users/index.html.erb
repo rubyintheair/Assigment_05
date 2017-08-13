@@ -14,8 +14,8 @@
             <%= link_to "Remove friend", remove_friend_path(user_id: user.id) , method: :delete ,class: "button is-danger add-remove"%>
           <% else %>
             <%= form_for current_user.friendships.build(friend: user) do |f| %>
-              <%= f.hidden_field :friend_id, name: "Add Friend", class: "card-header-title" %>
-              <button class="button is-primary add-remove">Add Friend</button>
+              <%= f.hidden_field :friend_id, class: "card-header-title" %>
+                <button class="button is-primary add-remove">Add Friend</button>
             <% end %>
           <% end %>
         <% end %>

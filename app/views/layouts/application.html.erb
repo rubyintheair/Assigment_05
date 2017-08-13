@@ -10,9 +10,13 @@
   <body>
     <nav class="navbar ">
     <div class="navbar-brand">
-      <a class="navbar-item" href="/">
-        <strong>Banhbeobook</strong>
-      </a>
+      <% if !current_user %>
+        <a class="navbar-item" href="/">
+          <strong>Banhbeobook</strong>
+        </a>
+      <% else %>
+        <%= link_to "Banhbeobook", users_path, class:"navbar-item" %>
+      <% end %>
       <div class="navbar-start">
         <% if current_user %>
           <%= link_to "Logout", logout_path, class:"navbar-item" %>  
@@ -20,6 +24,11 @@
         <% else %>
           <%= link_to "Sign Up", new_user_path, class:"navbar-item" %>
           <%= link_to "Login", login_path, class:"navbar-item" %>
+        <% end %>
+      </div>
+      <div class="navbar-end">
+        <% if current_user %>  
+          <%= link_to "My Page", show_path, class:"navbar-item" %>  
         <% end %>
       </div>
     </div>

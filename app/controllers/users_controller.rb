@@ -12,7 +12,7 @@ class UsersController < ApplicationController
     if @user.save
       session[:user_id] = @user.id
       flash[:success] = "Sign up successfully!!!"
-      redirect_to show_path
+      redirect_to users_path
     else 
       flash[:error] = "Sign up again!"
       render "new"
