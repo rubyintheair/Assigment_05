@@ -1,40 +1,67 @@
 <h1>Sign up now! Banh peu!</h1>
-<div class="column is-4">
-  <%= form_for User.new do |f| %>
-  <div class="field">
-    <label class="label">Name</label>
-    <div class="control">
-      <%= f.text_field "name", class: "input", placeholder: "Name" %>
+<div class="columns">
+  <div class="column is-4">
+    <%= form_for User.new do |f| %>
+    <div class="field">
+      <label class="label">Name</label>
+      <div class="control">
+        <%= f.text_field "name", class: "input", placeholder: "Name" %>
+      </div>
+    </div>
+
+    <div class="field">
+      <label class="label">Email</label>
+      <div class="control">
+        <%= f.text_field "email", class: "input", placeholder: "abc@gmail.com" %>
+      </div>
+    </div>
+
+    <div class="field">
+      <label class="label">Password</label>
+      <div class="control">
+        <%= f.password_field "password", class: "input", placeholder: "********" %>
+      </div>
+    </div>
+
+    <div class="field">
+      <label class="label">Password Confirmation</label>
+      <div class="control">
+        <%= f.password_field "password_confirmation", class: "input", placeholder: "********" %>
+      </div>
+    </div>
+
+    <div class="field">
+      <p class="control">
+        <button class="button is-success">
+          Sign Up
+        </button>
+      </p>
+    </div>
+    <% end %>
+  </div>
+
+  <div class="column">
+      <div class="tile is-ancestor">
+      <div class="tile is-4 is-vertical is-parent">
+        <div class="tile is-child box">
+          <figure class="image is-4by3", style="width: 100%">
+            <img src="http://media.gettyimages.com/photos/tennage-girls-fun-picture-id497120990?s=170667a" alt="Image">
+          </figure>
+        </div>
+        <div class="tile is-child box">
+          <figure class="image is-4by3", style="width: 100%">
+            <img src="https://i.pinimg.com/originals/db/e7/82/dbe782d5f131e00dfc07432c9aedf07a.jpg" alt="Image">
+          </figure>
+        </div>
+      </div>
+      <div class="tile is-parent">
+        <div class="tile is-child box">
+          <figure class="image is-4by3", style="width: 100%">
+            <img src="http://data.whicdn.com/images/10083555/large.jpg" alt="Image">
+          </figure>
+        </div>
+      </div>
     </div>
   </div>
 
-  <div class="field">
-    <label class="label">Email</label>
-    <div class="control">
-      <%= f.text_field "email", class: "input", placeholder: "abc@gmail.com" %>
-    </div>
-  </div>
-
-  <div class="field">
-    <label class="label">Password</label>
-    <div class="control">
-      <%= f.password_field "password", class: "input", placeholder: "********" %>
-    </div>
-  </div>
-
-  <div class="field">
-    <label class="label">Password Confirmation</label>
-    <div class="control">
-      <%= f.password_field "password_confirmation", class: "input", placeholder: "********" %>
-    </div>
-  </div>
-
-  <div class="field">
-    <p class="control">
-      <button class="button is-success">
-        Sign Up
-      </button>
-    </p>
-  </div>
-  <% end %>
 </div>

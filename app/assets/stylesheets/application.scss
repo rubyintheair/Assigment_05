@@ -1,2 +1,11 @@
  @import "bulma";
  @import "users";
+
+.navbar {
+  margin: 10px;
+}
+
+.navbar-item {
+  margin: 5px;
+  background-color: #e600ac;
+}
